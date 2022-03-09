@@ -1,0 +1,9 @@
+#git+https://github.com/Rapptz/discord.py
+discord.py==1.7.2
+dnspython==1.16.0
+discord-py-slash-command
+PyNaCl
+numpy
+Pillow
+python-dotenv
+requests
