@@ -12,6 +12,9 @@ class RoleVoc(commands.Cog):
 
     @commands.Cog.listener()   
     async def on_voice_state_update(self, member, before, after):
+        if member.id == 907782113623953446:
+            return
+
         if not before.channel and after.channel:
             member = member
             role = discord.utils.get(member.guild.roles, id = 932359606762606665) #id du rôle "En voc"
