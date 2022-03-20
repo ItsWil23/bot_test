@@ -14,25 +14,27 @@ class Voc(commands.Cog):
         self.bot = bot
 
     async def cog_check(self, ctx):
-        gerants = get(ctx.guild.roles, id = 913205391763066941)     #admin
-        return gerants in ctx.author.roles
+        role = discord.utils.get(ctx.bot.get_guild(907734650527571978).roles, name='Admin')
+#        gerants = get(ctx.guild.roles, id = 913205391763066941)     #admin
+        return role in ctx.author.roles
 
-    async def cog_check(self, ctx):
-        responsable = get(ctx.guild.roles, id = 907753246775455824) #gold_role
-        return responsable in ctx.author.roles
-
-#    async def cog_check(self, ctx):
-#        secretaire = get(ctx.guild.roles, id = 889176817284562945)
-#        return secretaire in ctx.author.roles
-
-#    async def cog_check(self, ctx):
-#        super_modo = get(ctx.guild.roles, id = 904482032430755911)
-#        return super_modo in ctx.author.roles 
-
-#    async def cog_check(self, ctx):
-#        modo = get(ctx.guild.roles, id = 889168519114158132)
-#        return modo in ctx.author.roles 
+#    def is_admin_check(ctx):
+#        return ctx.author.id == 913205391763066941
     
+#    def is_admin():
+#        return commands.check(is_admin_check)
+
+#    def is_gold_check(ctx):
+#        return ctx.author.id == 907753246775455824
+
+#    def is_gold():
+#        return commands.check(is_gold_check)
+
+#    async def cog_check(self, ctx):
+#        responsable = get(ctx.guild.roles, id = 907753246775455824) #gold_role
+#        return responsable in ctx.author.roles
+
+
     @commands.command()
     async def join(self, ctx):
         channel = ctx.author.voice.channel
