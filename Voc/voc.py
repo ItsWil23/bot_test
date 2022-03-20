@@ -14,7 +14,7 @@ class Voc(commands.Cog):
         self.bot = bot
 
     async def cog_check(self, ctx):
-        role = discord.utils.get(ctx.bot.get_guild(907734650527571978).roles, name='913205391763066941')
+        role = discord.utils.get(ctx.bot.get_guild(907734650527571978).roles.id, name='913205391763066941')
 #        gerants = get(ctx.guild.roles, id = 913205391763066941)     #admin
         return role in ctx.author.roles
 
