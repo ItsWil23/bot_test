@@ -14,7 +14,7 @@ class Voc(commands.Cog):
         self.bot = bot
 
     async def cog_check(self, ctx):
-        role = discord.utils.get(ctx.bot.get_guild(907734650527571978).roles.id, id = 913205391763066941)
+        role = discord.utils.get(ctx.bot.get_guild.roles, name='Admin')
 #        gerants = get(ctx.guild.roles, id = 913205391763066941)     #admin
         return role in ctx.author.roles
 
@@ -30,9 +30,9 @@ class Voc(commands.Cog):
 #    def is_gold():
 #        return commands.check(is_gold_check)
 
-#    async def cog_check(self, ctx):
-#        responsable = get(ctx.guild.roles, id = 907753246775455824) #gold_role
-#        return responsable in ctx.author.roles
+    async def cog_check(self, ctx):
+        role = discord.utils.get(ctx.bot.get_guild.roles, id = 907753246775455824) #gold_role
+        return role in ctx.author.roles
 
 
     @commands.command()
