@@ -31,13 +31,14 @@ class Voc(commands.Cog):
 #    def is_gold():
 #        return commands.check(is_gold_check)
 
-#    def cog_check(self, ctx):
-#        gold = discord.utils.get(ctx.bot.get_guild(907734650527571978).roles, name='Gold Role') #gold_role
-#        return gold in ctx.author.roles
+    def is_gerant_check(ctx):
+        gerant = discord.utils.get(ctx.bot.get_guild(907734650527571978).roles, name='| 𝗚𝗘́𝗥𝗔𝗡𝗧𝗦') 
+        return gerant in ctx.author.roles
 
 
     @commands.command()
     @commands.check(is_admin_check)
+    @commands.check(is_gerant_check)
     async def join(self, ctx):
         channel = ctx.author.voice.channel
         await ctx.send('Joined !')
@@ -45,6 +46,7 @@ class Voc(commands.Cog):
 
     @commands.command()
     @commands.check(is_admin_check)
+    @commands.check(is_gerant_check)
     async def leave(self, ctx):
         await ctx.send('Leaved !')
         await ctx.voice_client.disconnect()
