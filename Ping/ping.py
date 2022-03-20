@@ -9,7 +9,6 @@ class PingCog(commands.Cog):
     async def cog_check(self, ctx):
         return ctx.author.id == 737084050753323119
 
-
     @commands.command()
     async def ping(self, ctx):
         await ctx.message.reply(f'Pong!\n{round(self.bot.latency * 1000)}ms')
