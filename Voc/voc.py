@@ -13,10 +13,11 @@ class Voc(commands.Cog):
     def __init__(self, bot: commands.Bot):
         self.bot = bot
 
-    async def cog_check(self, ctx):
+    def is_admin_check(self, ctx):
         role = discord.utils.get(ctx.bot.get_guild(907734650527571978).roles, name='✔︎')
 #        gerants = get(ctx.guild.roles, id = 913205391763066941)     #admin
         return role in ctx.author.roles
+
 
 #    def is_admin_check(ctx):
 #        return ctx.author.id == 913205391763066941
@@ -36,12 +37,14 @@ class Voc(commands.Cog):
 
 
     @commands.command()
+    @commands.check(is_admin_check)
     async def join(self, ctx):
         channel = ctx.author.voice.channel
         await ctx.send('Joined !')
         await channel.connect()
 
     @commands.command()
+    @commands.check(is_admin_check)
     async def leave(self, ctx):
         await ctx.send('Leaved !')
         await ctx.voice_client.disconnect()
